@@ -1,0 +1,274 @@
+
+/* hide Items */
+
+.mobile-nav {
+    display: none;
+}
+
+/* common Styles */
+
+* {
+    margin : 0;
+    padding : 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+p {
+    line-height: 2;
+}
+
+/* Header */
+
+.logo a {
+    font-size: 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #e65757;
+    margin-left: 32px;
+}
+
+header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: url(gi.jpg);
+    background-size:cover;
+    background-position: top;
+}
+header .btn a{
+    width: 10rem;
+    height: 3rem;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 10px;
+    text-transform: uppercase;
+    margin-left: 5rem;
+   
+    color: white;
+    background: transparent;
+  cursor: pointer;
+    border:2px solid salmon;
+}
+.btn{
+    margin-top: 4rem;
+}
+header .btn a:hover{
+        
+    background-color: salmon;
+    border:2px solid white;  
+   
+}
+
+header h1 {
+    font-size: 80px;
+    text-transform: uppercase;
+    line-height: 1;
+    color: white;
+    padding: 0 32px;
+    text-align: left;
+}
+
+.orange {
+    color: #ee5555;
+} 
+
+/* Nav */
+
+nav {
+    margin-top: 1rem;
+    position: fixed;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transform: all .6s;
+}
+
+nav.scrolled {
+    background: white;
+}
+
+nav.scrolled a {
+    color: black;
+}
+
+
+nav.scrolled .logo a {
+    background: black;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 32px;
+    
+    text-transform: uppercase;
+    
+}
+nav ul a:hover{
+    border-bottom:2px solid #e65757;
+}
+nav ul li .active{
+    border-bottom:2px solid #e65757;
+
+}
+
+nav ul li a {
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+
+}
+
+@media(max-width:800px) {
+    .about .content {
+        flex-direction: column;
+    }
+}
+
+@media(max-width:700px) {
+    .projects .content {
+        flex-direction: column;
+    }
+
+    .projects .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 8px;
+        order: 2;
+    }
+
+    .projects .active-image {
+        order: 1;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        background: #e65c57;
+        position: fixed;
+        top: 0;
+        right: 100vh;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+        transition: all .4s;
+    }
+
+    nav .mobile-nav.active {
+        right: 0;
+        /* position: relative; */
+    }
+
+    nav .mobile-nav li {
+        margin: 16px;
+    }
+
+    nav .mobile-nav a {
+        font-size: 24px;
+        color: black;
+    }
+    nav .mobile-nav a:hover{
+        border-bottom: 2px solid rgb(0, 0, 0);
+    }
+    nav .mobile-nav li .active{
+        border-bottom: 2px solid rgb(0, 0, 0);
+    }
+
+    header button{
+        width: 10rem;
+        height: 3rem;
+        font-size: 20px;
+        text-transform: uppercase;
+        margin-left: 6rem;
+        margin-top: 2rem;
+        color: white;
+        background: transparent;
+      cursor: pointer;
+        border:2px solid salmon;
+    }
+    header button:hover{
+        
+        background-color: salmon;
+        border:2px solid white;  
+       
+    }
+
+
+    /* Menu Button */
+    .container {
+        height: 50px;
+        width: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        position: fixed;
+        right: 20px;
+        z-index: 200;
+    }
+
+    .container.active .menu-btn::after {
+        transform: rotateZ(45deg) translate(-6px, -12px);
+        background: #000000;
+    }
+
+    .container.active .menu-btn::before {
+        transform: rotateZ(-45deg) translate(-12px, 16px);
+        background: #000000;
+    }
+
+    .container.active .menu-btn {
+        background: transparent;
+    }
+
+    .menu-btn {
+        width: 40px;
+        height: 10px;
+        position: absolute;
+        background: white;
+        transition: all .4s;
+    }
+
+    .menu-btn::after {
+        content: '';
+        position: absolute;
+        background: salmon;
+        width: 40px;
+        height: 10px;
+        top: 16px;
+        transition: all .4s;
+    }
+
+    .menu-btn::before {
+        content: '';
+        position: absolute;
+        background: salmon;
+        width: 40px;
+        height: 10px;
+        bottom: 16px;
+        transition: all .4s;
+    }
+}
+
+
